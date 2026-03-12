@@ -4,7 +4,17 @@ export interface TutorialStep {
   note?: string;
 }
 
+export interface PlatformModalOption {
+  label: string;
+  app?: string;
+  provedor?: string;
+  dominio?: string;
+  login?: string;
+  senha?: string;
+}
+
 export interface PlatformModalInfo {
+  options?: PlatformModalOption[];
   app?: string;
   provedor?: string;
   dominio?: string;
