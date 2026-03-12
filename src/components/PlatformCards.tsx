@@ -145,9 +145,13 @@ const PlatformCards = () => {
             onClick={() => handleClick(platform)}
             className={`cursor-pointer rounded-xl p-5 bg-gradient-to-br ${platform.color} flex flex-col items-center justify-center text-center gap-3 min-h-[140px] transition-all duration-300 hover:shadow-lg`}
           >
-            <div className="w-12 h-12 flex items-center justify-center">
+            <div className="w-16 h-12 flex items-center justify-center">
               {platform.type === "image" ? (
-                <img src={platform.icon} alt={platform.title} className="w-10 h-10 object-contain" />
+                <img
+                  src={platform.icon}
+                  alt={platform.title}
+                  className={`object-contain ${platform.id === "google-tv" ? "w-16 h-16" : "w-10 h-10"}`}
+                />
               ) : platform.type === "text" ? (
                 <span className="text-foreground font-bold text-xl font-display">{platform.icon}</span>
               ) : (
