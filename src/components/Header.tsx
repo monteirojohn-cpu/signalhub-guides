@@ -12,7 +12,6 @@ const Header = () => {
           />
           <span className="font-display text-lg font-bold text-primary tracking-wide">SIGNALPLAY</span>
         </Link>
-        </Link>
 
         <nav className="flex items-center gap-4">
           <Link to="/tutorial" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
