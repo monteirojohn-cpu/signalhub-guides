@@ -6,51 +6,51 @@
 
 @layer base {
   :root {
-    --background: 220 30% 8%;
+    --background: 214 60% 11%;
     --foreground: 210 40% 96%;
 
-    --card: 220 28% 12%;
+    --card: 214 55% 15%;
     --card-foreground: 210 40% 96%;
 
-    --popover: 220 28% 12%;
+    --popover: 214 55% 15%;
     --popover-foreground: 210 40% 96%;
 
-    --primary: 212 80% 50%;
+    --primary: 24 90% 54%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 25% 18%;
+    --secondary: 214 50% 18%;
     --secondary-foreground: 210 40% 90%;
 
-    --muted: 220 20% 16%;
+    --muted: 214 40% 16%;
     --muted-foreground: 215 15% 55%;
 
-    --accent: 212 90% 58%;
+    --accent: 214 70% 45%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 220 20% 20%;
-    --input: 220 20% 20%;
-    --ring: 212 80% 50%;
+    --border: 214 35% 22%;
+    --input: 214 35% 22%;
+    --ring: 24 90% 54%;
 
     --radius: 0.75rem;
 
     /* Custom tokens */
-    --hero-gradient: linear-gradient(135deg, hsl(220 30% 6%) 0%, hsl(220 35% 12%) 50%, hsl(212 40% 16%) 100%);
-    --card-gradient: linear-gradient(145deg, hsl(220 28% 14%) 0%, hsl(220 28% 10%) 100%);
-    --glow-primary: 0 0 40px hsl(212 80% 50% / 0.15);
-    --glow-accent: 0 0 60px hsl(212 90% 58% / 0.1);
-    --text-gradient: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(212 60% 80%) 100%);
+    --hero-gradient: linear-gradient(135deg, hsl(214 60% 8%) 0%, hsl(214 55% 14%) 50%, hsl(214 50% 18%) 100%);
+    --card-gradient: linear-gradient(145deg, hsl(214 55% 17%) 0%, hsl(214 55% 12%) 100%);
+    --glow-primary: 0 0 40px hsl(24 90% 54% / 0.2);
+    --glow-accent: 0 0 60px hsl(214 70% 45% / 0.1);
+    --text-gradient: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(24 80% 75%) 100%);
 
-    --sidebar-background: 220 30% 8%;
+    --sidebar-background: 214 60% 11%;
     --sidebar-foreground: 210 40% 96%;
-    --sidebar-primary: 212 80% 50%;
+    --sidebar-primary: 24 90% 54%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 220 25% 18%;
+    --sidebar-accent: 214 50% 18%;
     --sidebar-accent-foreground: 210 40% 90%;
-    --sidebar-border: 220 20% 20%;
-    --sidebar-ring: 212 80% 50%;
+    --sidebar-border: 214 35% 22%;
+    --sidebar-ring: 24 90% 54%;
   }
 }
 
@@ -101,12 +101,12 @@
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: hsl(220 30% 8%);
+  background: hsl(214 60% 11%);
 }
 ::-webkit-scrollbar-thumb {
-  background: hsl(220 20% 25%);
+  background: hsl(214 35% 25%);
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(212 80% 50%);
+  background: hsl(24 90% 54%);
 }
