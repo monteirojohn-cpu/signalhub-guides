@@ -18,8 +18,9 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full border border-red-500/30 bg-red-500/10 text-sm font-semibold text-red-500">
-            🔞 SENHA DOS CANAIS ADULTOS: 8888
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full border border-border bg-secondary/50 text-sm text-muted-foreground">
+            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+            Aplicativo de Streaming
           </div>
 
           <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
