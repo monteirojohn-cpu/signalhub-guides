@@ -8,9 +8,10 @@ const Header = () => {
           <img 
             src="/images/signalplay-logo.png" 
             alt="SIGNALPLAY" 
-            className="h-10 w-10 rounded-lg object-cover"
+            className="h-9 w-auto"
           />
-          <span className="font-display text-lg font-bold text-primary">SIGNALPLAY</span>
+          <span className="font-display text-lg font-bold text-primary tracking-wide">SIGNALPLAY</span>
+        </Link>
         </Link>
 
         <nav className="flex items-center gap-4">
