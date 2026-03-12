@@ -46,9 +46,9 @@ export const platforms: Platform[] = [
     id: "app-store",
     title: "App Store",
     subtitle: "iPhone & iPad",
-    icon: "apple",
-    color: "from-gray-700 to-gray-900",
-    type: "lucide",
+    icon: "/icons/app-store.png",
+    color: "from-blue-500 to-blue-700",
+    type: "image",
   },
   {
     id: "play-store",
