@@ -76,7 +76,7 @@ export const platforms: Platform[] = [
     color: "from-green-700 to-green-900",
     type: "image",
     action: "link",
-    href: "https://play.google.com/store/apps/details?id=br.com.signalplay.tv.mobile&hl=pt_BR",
+    href: "https://play.google.com/store/apps/details?id=br.com.signalplay.tv.mobile&pcampaignid=web_share",
   },
   {
     id: "google-tv",
