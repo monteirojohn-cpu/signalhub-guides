@@ -4,6 +4,15 @@ export interface TutorialStep {
   note?: string;
 }
 
+export interface PlatformFallbackApp {
+  note: string;
+  app: string;
+  provedor?: string;
+  dominio?: string;
+  login?: string;
+  senha?: string;
+}
+
 export interface PlatformModalOption {
   label: string;
   app?: string;
@@ -25,6 +34,7 @@ export interface PlatformModalInfo {
   downloaderNote?: string;
   storeLink?: string;
   storeLinkLabel?: string;
+  fallbackApp?: PlatformFallbackApp;
 }
 
 export interface Platform {
