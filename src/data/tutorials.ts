@@ -114,9 +114,7 @@ export const platforms: Platform[] = [
     type: "text",
     action: "modal",
     modalInfo: {
-      app: "CDNTV PLAY",
-      provedor: "SIGNAL PLAY",
-      dominio: "tv.signalplay.com.br",
+      app: "SIGNALPLAY",
       login: "CONSULTE AO PROVEDOR",
       senha: "CONSULTE AO PROVEDOR",
       storeLink: "https://channelstore.roku.com/pt-br/details/fad401250fe02535949954b8f855f27c:f1a3a9a333538d79fb80f491da28c64b/signalplay",
