@@ -107,23 +107,18 @@ export const platforms: Platform[] = [
     type: "image",
     action: "modal",
     modalInfo: {
-      options: [
-        {
-          label: "Opção 1 — SIGNALPLAY",
-          app: "SIGNALPLAY",
-          login: "CONSULTE AO PROVEDOR",
-          senha: "CONSULTE AO PROVEDOR",
-        },
-        {
-          label: "Opção 2 — CDNTV PLAY",
-          app: "CDNTV PLAY",
-          provedor: "SIGNAL PLAY",
-          dominio: "tv.signalplay.com.br",
-          login: "CONSULTE AO PROVEDOR",
-          senha: "CONSULTE AO PROVEDOR",
-        },
-      ],
+      app: "SIGNALPLAY",
+      login: "CONSULTE AO PROVEDOR",
+      senha: "CONSULTE AO PROVEDOR",
       compativel: "Compatível com Samsung Smart TV, LG Smart TV e Amazon Fire Stick.",
+      fallbackApp: {
+        note: "Caso a sua TV não tenha o app SIGNALPLAY, baixe o app abaixo:",
+        app: "CDNTV PLAY",
+        provedor: "SIGNAL PLAY",
+        dominio: "tv.signalplay.com.br",
+        login: "CONSULTE AO PROVEDOR",
+        senha: "CONSULTE AO PROVEDOR",
+      },
     },
   },
   {
