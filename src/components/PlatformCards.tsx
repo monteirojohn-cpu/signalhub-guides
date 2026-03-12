@@ -1,9 +1,8 @@
 import { motion } from "framer-motion";
-import { Apple, Box } from "lucide-react";
+import { Box } from "lucide-react";
 import { platforms } from "@/data/tutorials";
 
 const iconMap: Record<string, React.ReactNode> = {
-  apple: <Apple className="w-10 h-10 text-foreground" />,
   box: <Box className="w-10 h-10 text-foreground" />,
 };
 
