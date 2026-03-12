@@ -30,7 +30,7 @@ const Hero = () => {
           </h1>
 
           <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-            Baixe o aplicativo de TV da <strong className="text-foreground">YPN Tecnologia</strong> e aprenda a configurar em poucos passos.
+            Baixe o aplicativo da <strong className="text-foreground">SIGNALPLAY</strong> e aprenda a configurar em poucos passos.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

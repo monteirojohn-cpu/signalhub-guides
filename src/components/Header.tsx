@@ -7,7 +7,7 @@ const Header = () => {
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
           <Wifi className="w-6 h-6 text-primary" />
-          <span className="font-display text-lg font-bold text-foreground">YPN Tecnologia</span>
+          <span className="font-display text-lg font-bold text-foreground">SIGNALPLAY</span>
         </Link>
 
         <nav className="flex items-center gap-4">
