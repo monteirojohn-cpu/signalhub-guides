@@ -120,6 +120,15 @@ const PlatformModal = ({ platform, onClose }: { platform: Platform; onClose: () 
           <>
             <OptionFields data={info} />
 
+            {info.fallbackApp && (
+              <div className="mt-4">
+                <p className="text-sm text-amber-400 font-semibold mb-3">
+                  ⚠️ {info.fallbackApp.note}
+                </p>
+                <OptionFields data={info.fallbackApp} />
+              </div>
+            )}
+
             {info.compativel && (
               <p className="text-sm text-muted-foreground mt-4 mb-4">{info.compativel}</p>
             )}
