@@ -86,7 +86,7 @@ export const platforms: Platform[] = [
     color: "from-green-600 to-green-800",
     type: "image",
     action: "link",
-    href: "https://play.google.com/store/apps/details?id=br.com.signalplay.tv.stb&hl=pt_BR",
+    href: "https://play.google.com/store/apps/details?id=br.com.signalplay.tv.stb&pcampaignid=web_share",
   },
   {
     id: "smart-tv",
