@@ -98,20 +98,7 @@ const Tutorial = () => {
           </div>
         </motion.div>
 
-        {/* Support info */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1 }}
-          className="max-w-3xl mx-auto mt-8 text-center"
-        >
-          <p className="text-muted-foreground text-sm">
-            Precisa de ajuda? Entre em contato:
-          </p>
-          <p className="text-muted-foreground text-sm mt-1">
-            (85) 3512-0329 · contato@ypntecnologia.com.br
-          </p>
-        </motion.div>
+        {/* Support info removed */}
       </div>
 
       <Footer />
