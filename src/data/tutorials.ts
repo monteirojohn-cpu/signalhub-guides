@@ -4,13 +4,29 @@ export interface TutorialStep {
   note?: string;
 }
 
+export interface PlatformModalInfo {
+  app?: string;
+  provedor?: string;
+  dominio?: string;
+  login?: string;
+  senha?: string;
+  compativel?: string;
+  downloaderCode?: string;
+  downloaderNote?: string;
+  storeLink?: string;
+  storeLinkLabel?: string;
+}
+
 export interface Platform {
   id: string;
   title: string;
   subtitle: string;
-  icon: string; // image path or icon name
+  icon: string;
   color: string;
   type: "image" | "lucide" | "text";
+  action: "link" | "modal";
+  href?: string;
+  modalInfo?: PlatformModalInfo;
 }
 
 export const tutorialSteps: TutorialStep[] = [
@@ -49,6 +65,8 @@ export const platforms: Platform[] = [
     icon: "/icons/app-store.png",
     color: "from-blue-500 to-blue-700",
     type: "image",
+    action: "link",
+    href: "https://apps.apple.com/br/app/signalplay/id6749374183",
   },
   {
     id: "play-store",
@@ -57,6 +75,18 @@ export const platforms: Platform[] = [
     icon: "/icons/play-store.png",
     color: "from-green-700 to-green-900",
     type: "image",
+    action: "link",
+    href: "https://play.google.com/store/apps/details?id=br.com.signalplay.tv.mobile&hl=pt_BR",
+  },
+  {
+    id: "android-tv",
+    title: "Android TV",
+    subtitle: "Smart TV Android",
+    icon: "/icons/android-tv.png",
+    color: "from-green-600 to-green-800",
+    type: "image",
+    action: "link",
+    href: "https://play.google.com/store/apps/details?id=br.com.signalplay.tv.stb&hl=pt_BR",
   },
   {
     id: "smart-tv",
@@ -65,6 +95,15 @@ export const platforms: Platform[] = [
     icon: "/icons/smart-tv.png",
     color: "from-blue-700 to-blue-900",
     type: "image",
+    action: "modal",
+    modalInfo: {
+      app: "CDNTV PLAY",
+      provedor: "SIGNAL PLAY",
+      dominio: "tv.signalplay.com.br",
+      login: "CONSULTE AO PROVEDOR",
+      senha: "CONSULTE AO PROVEDOR",
+      compativel: "Compatível com Samsung Smart TV, LG Smart TV e Amazon Fire Stick.",
+    },
   },
   {
     id: "roku",
@@ -73,6 +112,16 @@ export const platforms: Platform[] = [
     icon: "Roku",
     color: "from-purple-700 to-purple-900",
     type: "text",
+    action: "modal",
+    modalInfo: {
+      app: "CDNTV PLAY",
+      provedor: "SIGNAL PLAY",
+      dominio: "tv.signalplay.com.br",
+      login: "CONSULTE AO PROVEDOR",
+      senha: "CONSULTE AO PROVEDOR",
+      storeLink: "https://channelstore.roku.com/pt-br/details/fad401250fe02535949954b8f855f27c:f1a3a9a333538d79fb80f491da28c64b/signalplay",
+      storeLinkLabel: "Abrir na Loja Roku",
+    },
   },
   {
     id: "tv-box",
@@ -81,6 +130,11 @@ export const platforms: Platform[] = [
     icon: "box",
     color: "from-amber-700 to-amber-900",
     type: "lucide",
+    action: "modal",
+    modalInfo: {
+      downloaderCode: "3103772",
+      downloaderNote: "Ou instale o APK via pen drive.",
+    },
   },
   {
     id: "web",
@@ -89,9 +143,10 @@ export const platforms: Platform[] = [
     icon: "/icons/live-stream.png",
     color: "from-red-700 to-red-900",
     type: "image",
+    action: "link",
+    href: "https://tv.signalplay.com.br",
   },
 ];
 
-// APK download URL - update this when you have your own hosted APK
 export const APK_DOWNLOAD_URL = "/downloads/signalplay.apk";
 export const APK_VERSION = "v1.0.0";
