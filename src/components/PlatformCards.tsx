@@ -7,9 +7,46 @@ const iconMap: Record<string, React.ReactNode> = {
   box: <Box className="w-10 h-10 text-foreground" />,
 };
 
+const OptionFields = ({ data }: { data: { app?: string; provedor?: string; dominio?: string; login?: string; senha?: string } }) => (
+  <div className="rounded-xl bg-secondary/50 border border-border p-4 space-y-3">
+    {data.app && (
+      <div>
+        <p className="text-xs uppercase tracking-wider text-muted-foreground">APP</p>
+        <p className="font-semibold text-foreground">{data.app}</p>
+      </div>
+    )}
+    {data.provedor && (
+      <div>
+        <p className="text-xs uppercase tracking-wider text-muted-foreground">PROVEDOR</p>
+        <p className="font-semibold text-foreground">{data.provedor}</p>
+      </div>
+    )}
+    {data.dominio && (
+      <div>
+        <p className="text-xs uppercase tracking-wider text-muted-foreground">DOMÍNIO</p>
+        <p className="font-semibold text-foreground">{data.dominio}</p>
+      </div>
+    )}
+    {data.login && (
+      <div>
+        <p className="text-xs uppercase tracking-wider text-muted-foreground">LOGIN</p>
+        <p className="font-semibold text-foreground">{data.login}</p>
+      </div>
+    )}
+    {data.senha && (
+      <div>
+        <p className="text-xs uppercase tracking-wider text-muted-foreground">SENHA</p>
+        <p className="font-semibold text-foreground">{data.senha}</p>
+      </div>
+    )}
+  </div>
+);
+
 const PlatformModal = ({ platform, onClose }: { platform: Platform; onClose: () => void }) => {
   const info = platform.modalInfo!;
   const isDownloader = !!info.downloaderCode;
+  const hasOptions = !!info.options && info.options.length > 0;
+  const [activeTab, setActiveTab] = useState(0);
 
   return (
     <motion.div
@@ -42,7 +79,7 @@ const PlatformModal = ({ platform, onClose }: { platform: Platform; onClose: () 
           ) : (
             iconMap[platform.icon]
           )}
-          {platform.title} {platform.subtitle && `/ ${platform.subtitle}`}
+          {platform.title} / {platform.subtitle}
         </h3>
 
         {isDownloader ? (
@@ -57,43 +94,34 @@ const PlatformModal = ({ platform, onClose }: { platform: Platform; onClose: () 
             </div>
             <p className="text-sm text-muted-foreground">{info.downloaderNote}</p>
           </div>
+        ) : hasOptions ? (
+          <>
+            <div className="flex gap-2 mb-4">
+              {info.options!.map((opt, i) => (
+                <button
+                  key={i}
+                  onClick={() => setActiveTab(i)}
+                  className={`flex-1 px-3 py-2 rounded-lg text-sm font-semibold transition-colors ${
+                    activeTab === i
+                      ? "bg-primary text-primary-foreground"
+                      : "bg-secondary/50 text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  {opt.label}
+                </button>
+              ))}
+            </div>
+            <OptionFields data={info.options![activeTab]} />
+            {info.compativel && (
+              <p className="text-sm text-muted-foreground mt-4">{info.compativel}</p>
+            )}
+          </>
         ) : (
           <>
-            <div className="rounded-xl bg-secondary/50 border border-border p-4 space-y-3 mb-4">
-              {info.app && (
-                <div>
-                  <p className="text-xs uppercase tracking-wider text-muted-foreground">APP</p>
-                  <p className="font-semibold text-foreground">{info.app}</p>
-                </div>
-              )}
-              {info.provedor && (
-                <div>
-                  <p className="text-xs uppercase tracking-wider text-muted-foreground">PROVEDOR</p>
-                  <p className="font-semibold text-foreground">{info.provedor}</p>
-                </div>
-              )}
-              {info.dominio && (
-                <div>
-                  <p className="text-xs uppercase tracking-wider text-muted-foreground">DOMÍNIO</p>
-                  <p className="font-semibold text-foreground">{info.dominio}</p>
-                </div>
-              )}
-              {info.login && (
-                <div>
-                  <p className="text-xs uppercase tracking-wider text-muted-foreground">LOGIN</p>
-                  <p className="font-semibold text-foreground">{info.login}</p>
-                </div>
-              )}
-              {info.senha && (
-                <div>
-                  <p className="text-xs uppercase tracking-wider text-muted-foreground">SENHA</p>
-                  <p className="font-semibold text-foreground">{info.senha}</p>
-                </div>
-              )}
-            </div>
+            <OptionFields data={info} />
 
             {info.compativel && (
-              <p className="text-sm text-muted-foreground mb-4">{info.compativel}</p>
+              <p className="text-sm text-muted-foreground mt-4 mb-4">{info.compativel}</p>
             )}
 
             {info.storeLink && (
@@ -101,7 +129,7 @@ const PlatformModal = ({ platform, onClose }: { platform: Platform; onClose: () 
                 href={info.storeLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 w-full justify-center px-4 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-colors"
+                className="inline-flex items-center gap-2 w-full justify-center px-4 py-3 mt-4 rounded-lg bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-colors"
               >
                 <ExternalLink className="w-4 h-4" />
                 {info.storeLinkLabel || "Abrir na Loja"}
